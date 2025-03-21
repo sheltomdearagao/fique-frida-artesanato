@@ -7,32 +7,32 @@ import { ArrowRight, Tag, Heart } from 'lucide-react';
 const products = [
   {
     id: 1,
-    name: 'Bolsa Floral',
-    category: 'bolsas',
+    name: 'Pochete Floral',
+    category: 'pochetes',
     price: 159.90,
     image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=400&h=500&q=80',
     isNew: true,
   },
   {
     id: 2,
-    name: 'Mochila Azteca',
-    category: 'mochilas',
+    name: 'Shoulder Bag Azteca',
+    category: 'shoulder-bags',
     price: 189.90,
     image: 'https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=400&h=500&q=80',
     isNew: true,
   },
   {
     id: 3,
-    name: 'Carteira Boho',
-    category: 'carteiras',
-    price: 79.90,
+    name: 'Travel Bag',
+    category: 'travel-bags',
+    price: 259.90,
     image: 'https://images.unsplash.com/photo-1606422558263-751d7675a860?auto=format&fit=crop&w=400&h=500&q=80',
     isNew: false,
   },
   {
     id: 4,
     name: 'Necessaire Frida',
-    category: 'acessorios',
+    category: 'outros',
     price: 69.90,
     image: 'https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&w=400&h=500&q=80',
     isNew: false,
@@ -44,10 +44,10 @@ const ProductsSection = () => {
 
   const categories = [
     { id: 'all', name: 'Todos' },
-    { id: 'bolsas', name: 'Bolsas' },
-    { id: 'mochilas', name: 'Mochilas' },
-    { id: 'carteiras', name: 'Carteiras' },
-    { id: 'acessorios', name: 'Acessórios' },
+    { id: 'pochetes', name: 'Pochetes' },
+    { id: 'shoulder-bags', name: 'Shoulder Bags' },
+    { id: 'travel-bags', name: 'Travel Bags' },
+    { id: 'outros', name: 'Outros' },
   ];
 
   const filteredProducts = activeCategory === 'all' 
@@ -65,6 +65,7 @@ const ProductsSection = () => {
           <h2 className="section-title centered">Nossos Produtos</h2>
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
             Peças exclusivas confeccionadas artesanalmente com tecidos de alta qualidade e estampas originais.
+            Todas feitas por encomenda para garantir exclusividade.
           </p>
         </div>
         
@@ -122,7 +123,9 @@ const ProductsSection = () => {
                     <span className="text-frida-red font-semibold">
                       R$ {product.price.toFixed(2).replace('.', ',')}
                     </span>
-                    <span className="text-sm text-gray-500 capitalize">{product.category}</span>
+                    <span className="text-sm text-gray-500 capitalize">
+                      {category.name}
+                    </span>
                   </div>
                 </div>
               </div>

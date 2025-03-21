@@ -7,6 +7,7 @@ import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import NewsletterForm from '../components/NewsletterForm';
 import Footer from '../components/Footer';
+import OrderInfoSection from '../components/OrderInfoSection';
 
 const Index = () => {
   // Scroll to top on page load
@@ -19,6 +20,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <ProductsSection />
+      <OrderInfoSection />
       <AboutSection />
       <div className="py-16 bg-frida-soft-yellow bg-opacity-30">
         <div className="container mx-auto px-4 text-center">
@@ -71,7 +73,9 @@ const Index = () => {
         </div>
       </div>
       <ContactSection />
-      <NewsletterForm />
+      <div id="newsletter">
+        <NewsletterForm />
+      </div>
       <Footer />
     </div>
   );

@@ -1,6 +1,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Bell } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -50,6 +52,15 @@ const Hero = () => {
             </Link>
             <Link to="/about" className="btn-secondary">
               Nossa História
+            </Link>
+          </div>
+          
+          <div className="mt-8">
+            <Link to="#newsletter">
+              <Button variant="outline" className="border-2 border-frida-yellow bg-transparent hover:bg-frida-yellow hover:text-gray-900 transition-colors flex items-center gap-2">
+                <Bell size={20} />
+                Fique por dentro das novidades
+              </Button>
             </Link>
           </div>
         </div>
