@@ -124,7 +124,9 @@ const ProductsSection = () => {
                       R$ {product.price.toFixed(2).replace('.', ',')}
                     </span>
                     <span className="text-sm text-gray-500 capitalize">
-                      {category.name}
+                      {/* Aqui está o erro: na linha abaixo estava tentando usar 'category' que não existe no escopo */}
+                      {/* Precisamos encontrar a categoria correspondente com base no ID do produto */}
+                      {categories.find(cat => cat.id === product.category)?.name || product.category}
                     </span>
                   </div>
                 </div>
