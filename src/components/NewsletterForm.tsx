@@ -26,7 +26,7 @@ const NewsletterForm = () => {
   };
   
   return (
-    <section className="py-16 bg-frida-red relative overflow-hidden">
+    <section className="py-16 bg-frida-soft-pink relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1619873150497-5df1b9c00897?auto=format&fit=crop&w=1920&h=1080&q=80')] bg-cover bg-center opacity-10"></div>
       
@@ -36,11 +36,11 @@ const NewsletterForm = () => {
             <Mail className="h-8 w-8 text-frida-red" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-gray-800 mb-4">
             Fique por dentro das novidades
           </h2>
           
-          <p className="text-white text-opacity-90 mb-8 max-w-xl mx-auto">
+          <p className="text-gray-700 mb-8 max-w-xl mx-auto">
             Inscreva-se em nossa newsletter e receba em primeira mão novidades sobre lançamentos, promoções e conteúdos exclusivos.
           </p>
           
@@ -48,20 +48,20 @@ const NewsletterForm = () => {
             <input
               type="email"
               placeholder="Seu melhor email"
-              className="flex-grow px-4 py-3 rounded-lg focus:ring-2 focus:ring-frida-yellow focus:border-transparent transition-all"
+              className="flex-grow px-4 py-3 rounded-lg focus:ring-2 focus:ring-frida-red focus:border-transparent transition-all"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button 
               type="submit" 
-              className="bg-frida-yellow hover:bg-opacity-90 text-gray-800 font-medium px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+              className="bg-frida-red hover:bg-opacity-90 text-white font-medium px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
               disabled={loading}
             >
               {loading ? 'Enviando...' : 'Inscrever-se'}
             </button>
           </form>
           
-          <p className="text-white text-opacity-70 text-sm mt-4">
+          <p className="text-gray-600 text-sm mt-4">
             Respeitamos sua privacidade. Você pode cancelar a inscrição a qualquer momento.
           </p>
         </div>

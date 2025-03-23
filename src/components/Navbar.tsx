@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/home" className="flex items-center">
           <img 
             src="/lovable-uploads/824c25d5-0b7c-470e-9dc1-216f207b345b.png" 
             alt="Fique Frida Logo" 
@@ -41,7 +41,7 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'text-frida-red after:w-full' : ''}`}>Início</Link>
+          <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'text-frida-red after:w-full' : ''}`}>Início</Link>
           <Link to="/products?category=pochetes" className={`nav-link ${location.pathname === '/products' && location.search.includes('pochetes') ? 'text-frida-red after:w-full' : ''}`}>Pochetes</Link>
           <Link to="/products?category=shoulder-bags" className={`nav-link ${location.pathname === '/products' && location.search.includes('shoulder-bags') ? 'text-frida-red after:w-full' : ''}`}>Shoulder Bags</Link>
           <Link to="/products?category=travel-bags" className={`nav-link ${location.pathname === '/products' && location.search.includes('travel-bags') ? 'text-frida-red after:w-full' : ''}`}>Travel Bags</Link>
@@ -85,7 +85,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`md:hidden bg-white absolute w-full shadow-md transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen py-4' : 'max-h-0 py-0 overflow-hidden'}`}>
         <div className="container mx-auto px-4 flex flex-col space-y-4">
-          <Link to="/" className="py-2 px-4 hover:bg-gray-50 rounded-md">Início</Link>
+          <Link to="/home" className="py-2 px-4 hover:bg-gray-50 rounded-md">Início</Link>
           <Link to="/products?category=pochetes" className="py-2 px-4 hover:bg-gray-50 rounded-md">Pochetes</Link>
           <Link to="/products?category=shoulder-bags" className="py-2 px-4 hover:bg-gray-50 rounded-md">Shoulder Bags</Link>
           <Link to="/products?category=travel-bags" className="py-2 px-4 hover:bg-gray-50 rounded-md">Travel Bags</Link>
