@@ -70,7 +70,7 @@ const Landing = () => {
             </div>
             
             <Button
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/home')}
               variant="secondary"
               className="w-full py-6 text-base bg-frida-yellow text-gray-800 hover:bg-opacity-90"
             >
