@@ -23,7 +23,7 @@ const Auth = () => {
     const checkUser = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session) {
-        navigate('/');
+        navigate('/home');
       }
     };
     checkUser();
@@ -51,7 +51,7 @@ const Auth = () => {
         });
         if (error) throw error;
         toast.success('Login realizado com sucesso!');
-        navigate('/');
+        navigate('/home');
       }
     } catch (error: any) {
       setError(error.message);
@@ -69,7 +69,7 @@ const Auth = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/`,
+          redirectTo: `${window.location.origin}/home`,
         },
       });
       if (error) throw error;
