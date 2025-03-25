@@ -16,26 +16,11 @@ const Auth = () => {
     const checkUser = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session) {
-        console.log('Usuário já está logado, redirecionando para home');
         navigate('/home');
       }
     };
     
     checkUser();
-    
-    // Configurar o listener de alteração de autenticação
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        console.log('Auth state changed:', event);
-        if (session) {
-          navigate('/home');
-        }
-      }
-    );
-
-    return () => {
-      subscription.unsubscribe();
-    };
   }, [navigate]);
 
   return (

@@ -35,9 +35,6 @@ const EmailAuthForm: React.FC<EmailAuthFormProps> = ({
         const { error } = await supabase.auth.signUp({
           email,
           password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/home`,
-          }
         });
         
         if (error) throw error;
@@ -54,21 +51,8 @@ const EmailAuthForm: React.FC<EmailAuthFormProps> = ({
         navigate('/home');
       }
     } catch (error: any) {
-      let errorMessage = 'Erro na autenticação';
-      
-      // Tratamento específico para erros comuns
-      if (error.message.includes('Email not confirmed')) {
-        errorMessage = 'Email não confirmado. Verifique sua caixa de entrada.';
-      } else if (error.message.includes('Invalid login credentials')) {
-        errorMessage = 'Email ou senha incorretos.';
-      } else if (error.message.includes('User already registered')) {
-        errorMessage = 'Email já cadastrado. Tente fazer login.';
-      } else if (error.message.includes('Password should be')) {
-        errorMessage = 'A senha deve ter pelo menos 6 caracteres.';
-      }
-      
-      setError(errorMessage);
-      toast.error(errorMessage);
+      setError(error.message);
+      toast.error('Erro na autenticação');
     } finally {
       setLoading(false);
     }
@@ -106,7 +90,6 @@ const EmailAuthForm: React.FC<EmailAuthFormProps> = ({
             onChange={(e) => setPassword(e.target.value)}
             className="pl-10"
             placeholder="••••••••"
-            minLength={6}
           />
         </div>
       </div>
