@@ -27,11 +27,17 @@ const GoogleAuthButton: React.FC<GoogleAuthButtonProps> = ({
         provider: 'google',
         options: {
           redirectTo: `${window.location.origin}/home`,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          }
         },
       });
+      
       if (error) throw error;
     } catch (error: any) {
-      setError(error.message);
+      console.error('Google auth error:', error);
+      setError('Erro ao conectar com Google. Por favor, tente novamente.');
       toast.error('Erro ao conectar com Google');
     } finally {
       setLoading(false);
